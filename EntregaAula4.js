@@ -139,18 +139,18 @@ async function test() {
 await productManager.create(data);
 await productManager.create(data2);
 await productManager.create(data3);
-console.log(await productManager.getProducts());
+console.log(await productManager.getProdutos());
 
 // Prueba para cambiar el code
-await productManager.updateProduct(1, { code: "BB22" });
-console.log(await productManager.getProducts());
+await productManager.updateProduto(1, { code: "BB22" });
+console.log(await productManager.getProdutos());
 
 // ProductoById
 console.log(await productManager.getProductsById(2));
 
 // Prueba borrar un producto
 await productManager.deleteProduct(1);
-console.log(await productManager.getProducts());
+console.log(await productManager.getProdutos());
 }
 
 test();
