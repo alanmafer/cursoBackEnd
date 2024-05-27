@@ -1,5 +1,5 @@
-import { ProductManager } from "./ProductManager.mjs";
-import { Product } from "./Product.mjs";
+import { ProductManager } from "./ProductManager.js";
+import { Product } from "./Product.js";
 
 const produto1 = new Product(
   "SmartWatch Pro",
