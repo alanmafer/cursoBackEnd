@@ -79,18 +79,18 @@ class ProductManager {
             produtos[index].stock = stock;
         }
 
-        await saveJsonFile(this.path, produtos);
+        await saveJsonInFile(this.path, produtos);
         console.log("Produto atualizado.")
     }
 
     async deleteProduct(id) {
-        const products = await getJsonFromFile(this.path);
-        const index = products.findIndex((u) => u.id === id);
+        const produtos = await getJsonFromFile(this.path);
+        const index = produtos.findIndex((u) => u.id === id);
         if (index === -1) {
           throw new Error("Produto não encontrado.");
         } else {
-          products.splice(index, 1);
-          await saveJsonInFile(this.path, products);
+            produtos.splice(index, 1);
+          await saveJsonInFile(this.path, produtos);
           console.log("Produto deletado.");
         }
     }
@@ -146,7 +146,7 @@ await productManager.updateProduto(1, { code: "BB22" });
 console.log(await productManager.getProdutos());
 
 // ProductoById
-console.log(await productManager.getProductsById(2));
+console.log(await productManager.getProdutosById(2));
 
 // Prueba borrar un producto
 await productManager.deleteProduct(1);
